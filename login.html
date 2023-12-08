@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>The Outer Clove Restaurant</title>
+    <title>Login - The Outer Clove Restaurant</title>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <img src="logo.png" alt="Restaurant Logo">
-                <h1>The Outer Clove Restaurant</h1>
-            </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -21,16 +17,18 @@
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
+        <h1>Login to The Outer Clove Restaurant</h1>
     </header>
-    <section class="overview">
-        <h2>Explore a Culinary Experience Like No Other</h2>
-        <p>Discover the finest dining options, exceptional service, and a warm ambiance at The Outer Clove Restaurant.</p>
-    </section>
-    <section class="promotions">
-        <h2>Featured Promotions</h2>
-        <div class="promotion-card-container" id="promotionsContainer">
-            <!-- Promotion cards will be dynamically added here -->
-        </div>
+    <section class="login-form">
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
     </section>
     <script type="module" src="script.js"></script>
 </body>
