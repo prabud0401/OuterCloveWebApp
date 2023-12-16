@@ -26,12 +26,22 @@
         <form>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
-
+        
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-
+        
+            <label for="user-type">User Type:</label>
+            <select id="user-type" name="user-type" required>
+                <option value="admin">Admin</option>
+                <option value="staff">Staff</option>
+                <option value="customer">Customer</option>
+            </select>
+        
             <button type="submit">Login</button>
         </form>
+        
+        <p>Don't have an account? <a href="signup.html">Create a new account</a></p>
+        
     </section>
     <script type="module" src="script.js"></script>
 </body>
