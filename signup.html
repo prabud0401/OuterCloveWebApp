@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png"> <!-- Replace with the actual path to your favicon -->
+
+    <title>Sign Up - The Outer Clove Restaurant</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/images/logo.jpg" alt="Restaurant Logo">
+                <h1>The Outer Clove Restaurant</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="login-form">
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <label for="user-type">User Type:</label>
+            <select id="user-type" name="user-type" required>
+                <!-- Only allow "Customer" option for sign up -->
+                <option value="customer">Customer</option>
+            </select>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a>.</p>
+    </section>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

@@ -189,6 +189,10 @@ form {
     height: 90%;
     width: auto;
 }
+button{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
 
 p {
     font-size: 1.2em;
