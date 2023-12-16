@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=YourGoogleFont">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
     <title>The Outer Clove Restaurant</title>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <img src="logo.png" alt="Restaurant Logo">
-                <h1>The Outer Clove Restaurant</h1>
+                <img src="/images/logo.jpg" alt="Restaurant Logo">
             </div>
+            <h1>The Outer Clove Restaurant</h1>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </header>
+    <section class="restaurant-image">
+        <img src="images/restaurant-image.jpg" alt="Restaurant Image">
+    </section>
     <section class="overview">
         <h2>Explore a Culinary Experience Like No Other</h2>
         <p>Discover the finest dining options, exceptional service, and a warm ambiance at The Outer Clove Restaurant.</p>
@@ -32,6 +38,43 @@
             <!-- Promotion cards will be dynamically added here -->
         </div>
     </section>
-    <script type="module" src="script.js"></script>
+    <section class="about-content" id="about">
+        <div class="about-container">
+            <h2>About Us</h2>
+            <p>Welcome to The Outer Clove Restaurant, where culinary excellence meets a delightful dining experience. Our journey began with a passion for creating memorable moments through exquisite cuisine and unparalleled service.</p>
+            <p>At The Outer Clove, we take pride in sourcing the finest ingredients to craft dishes that tantalize your taste buds. Our chefs, with their culinary expertise, bring a fusion of flavors to every plate, ensuring a gastronomic journey like no other.</p>
+            <p>Whether you're here for a casual dining experience, a celebration, or a special event, we strive to create an ambiance that complements our delectable offerings. Join us on a culinary adventure that promises exceptional flavors, warm hospitality, and a touch of sophistication.</p>
+        </div>
+    </section>
+
+    <section class="services-content" id="services">
+        <div class="services-container">
+            <h2>Our Services</h2>
+            <p>Indulge in a range of services tailored to elevate your dining experience at The Outer Clove:</p>
+            <ul>
+                <li>Exquisite Dining Menus</li>
+                <li>Private Event Hosting</li>
+                <li>Catering Services</li>
+                <li>Cocktail Mixology Classes</li>
+                <li>Seasonal Specials</li>
+            </ul>
+            <p>Our commitment is to provide not just a meal but a culinary journey that leaves a lasting impression. Explore our services and let us create memorable moments for you and your guests.</p>
+        </div>
+    </section>
+    <footer>
+        <div class="contact-content">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to make a reservation? Reach out to us:</p>
+            <p>Email: info@outerclove.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <address>
+                Visit us at: 123 Main Street, Cityville, State, ZIP
+            </address>
+        </div>
+        <div class="map-container">
+            <!-- Google Maps Embedded Link (Replace with your actual link) -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2591.652075422456!2d-117.29785302373405!3d49.49107885597503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537cb6a67b4952a1%3A0xe9628c94e2a00cb3!2sOuter%20Clove%20Restaurant!5e0!3m2!1sen!2slk!4v1702715232683!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </footer>
 </body>
 </html>

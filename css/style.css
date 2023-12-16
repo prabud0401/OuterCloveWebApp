@@ -2,29 +2,44 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #9cc49c;
+    display: grid;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
     background-color: #4CAF50;
     color: #fff;
     padding: 1em;
+    display: grid;
+    grid-template-areas: "logo" "h1" "ul";
+    height: 70%;
 }
+
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
+
 nav .logo img {
-    height: 40px; /* Adjust as needed */
+    height: 90px;
     margin-right: 10px;
+    border-radius: 50%;
+    grid-area: logo;
+}
+nav h1{
+    grid-area: h1;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    grid-area: ul;
 }
 
 nav ul li {
@@ -43,34 +58,20 @@ nav a:hover {
     color: #ffcc00;
 }
 
-.overview {
-    max-width: 800px;
-    margin: 2em auto;
+.restaurant-image {
     text-align: center;
+    margin-top: 10px;
 }
 
-.promotions {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.restaurant-image img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.promotion-card {
-    max-width: 300px;
-    margin: 1em;
-    padding: 1em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-}
-
-.promotion-card img {
-    width: 100%;
-    border-radius: 5px;
-}
-
 
 .overview {
+    display: grid;
     max-width: 800px;
     margin: 2em auto;
     text-align: center;
@@ -95,26 +96,14 @@ nav a:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow for a subtle effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .promotion-card img {
     width: 100%;
     border-radius: 5px;
 }
-.login-form {
-    max-width: 400px;
-    margin: 2em auto;
-    padding: 1em;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-form {
-    display: flex;
-    flex-direction: column;
-}
 
 label {
     margin-bottom: 0.5em;
@@ -139,23 +128,7 @@ button:hover {
     background-color: #45a049;
 }
 
-.about-content {
-    max-width: 800px;
-    margin: 2em auto;
-    padding: 1em;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.about-content h2 {
-    color: #4CAF50; /* Header color */
-}
-
-.about-content p {
-    margin-bottom: 1em;
-}
-
+.about-content,
 .services-content {
     max-width: 800px;
     margin: 2em auto;
@@ -165,53 +138,79 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.about-content h2,
 .services-content h2 {
-    color: #4CAF50; /* Header color */
+    color: #4CAF50;
+    margin-bottom: 1em;
 }
 
+.about-content p,
 .services-content p {
     margin-bottom: 1em;
 }
-.contact-content {
-    max-width: 800px;
-    margin: 2em auto;
+
+footer {
+    background-color: #4CAF50;
+    color: #fff;
     padding: 1em;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "contact-contact map-container";
+}
+
+.map-container,
+.contact-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-form {
+    max-width: 400px;
+    margin: 1em auto 1em; /* Adjusted margin property */
+    padding: 2em;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 80%;
+    width: auto;
+
 }
 
-.contact-content h2 {
-    color: #4CAF50; /* Header color */
-}
-
-.contact-content p {
-    margin-bottom: 1em;
-}
-
-.contact-content form {
+form {
     display: flex;
     flex-direction: column;
+    height: 90%;
+    width: auto;
 }
 
-.contact-content label {
+label {
     margin-bottom: 0.5em;
+    font-size: 1.2em; /* Adjust the font size as needed */
 }
 
-.contact-content input,
-.contact-content textarea {
+input {
+    padding: 0.8em;
     margin-bottom: 1em;
-    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em; /* Adjust the font size as needed */
 }
 
-.contact-content button {
-    background-color: #4CAF50; /* Button color */
+button {
+    background-color: #4CAF50;
     color: #fff;
-    padding: 0.5em;
+    padding: 0.8em;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.2em; /* Adjust the font size as needed */
 }
 
-.contact-content button:hover {
-    background-color: #45a049; /* Darker button color on hover */
-}   
+button:hover {
+    background-color: #45a049;
+}
