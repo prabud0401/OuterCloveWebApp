@@ -1,3 +1,40 @@
+<?php
+include_once "php/db.php";
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get user input
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $confirmPassword = $_POST["confirm-password"];
+    $user_type = $_POST["user-type"];
+
+    // Validate password and confirm password match
+    if ($password !== $confirmPassword) {
+        $error_message = "Password and Confirm Password do not match.";
+    } else {
+        // Hash the password (for security)
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        // Insert user data into the database
+        if (insertUser($conn, $username, $email, $hashedPassword, $user_type)) {
+            // Registration successful, redirect to login page
+            header("Location: login.php");
+            exit();
+        } else {
+            $error_message = "Error registering user. Please try again.";
+        }
+    }
+}
+
+// Function to insert user into the database
+function insertUser($conn, $username, $email, $password, $user_type) {
+    $sql = "INSERT INTO users (username, email, password, user_type) VALUES ('$username', '$email', '$password', '$user_type')";
+    return $conn->query($sql);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,13 +57,13 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="signup.html">Sign Up</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="login.php">Login</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <section class="login-form">
-        <form>
+        <form method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
@@ -47,7 +84,14 @@
 
             <button type="submit">Sign Up</button>
         </form>
-        <p>Already have an account? <a href="login.html">Login here</a>.</p>
+
+        <?php
+        if (isset($error_message)) {
+            echo "<p class='error-message'>$error_message</p>";
+        }
+        ?>
+
+        <p>Already have an account? <a href="login.php">Login here</a>.</p>
     </section>
 
     <script type="module" src="script.js"></script>
