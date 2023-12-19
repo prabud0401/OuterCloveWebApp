@@ -249,3 +249,21 @@ a:hover {
         max-width: 100%;
     }
 }
+/* ... (existing styles) ... */
+
+.login-form {
+    /* ... existing styles ... */
+    transition: background-color 0.3s ease;
+}
+
+.admin-style {
+    background-color: #ff9999; /* Update with admin-style colors */
+}
+
+.staff-style {
+    background-color: #99ff99; /* Update with staff-style colors */
+}
+
+.customer-style {
+    background-color: #9999ff; /* Update with customer-style colors */
+}

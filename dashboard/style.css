@@ -1,0 +1,135 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #9cc49c;
+    display: grid;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 1em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+.dashboard {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard h2 {
+    color: #4CAF50;
+    margin-bottom: 1em;
+}
+
+.account-management,
+.browse-promotions,
+.services,
+.reservations,
+.place-order,
+.feedback {
+    margin-bottom: 1.5em;
+}
+
+.account-management h3,
+.browse-promotions h3,
+.services h3,
+.reservations h3,
+.place-order h3,
+.feedback h3 {
+    color: #4CAF50;
+    margin-bottom: 0.5em;
+}
+
+.account-management ul {
+    list-style: none;
+}
+
+.account-management li,
+.browse-promotions li,
+.services li,
+.reservations li,
+.place-order li,
+.feedback li {
+    margin-bottom: 0.5em;
+}
+
+.footer {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 1em;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+}
+
+.map-container,
+.contact-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-container p,
+.contact-contact p {
+    margin: 0;
+}
+
+.map-container span {
+    font-weight: bold;
+    color: #ffcc00;
+}

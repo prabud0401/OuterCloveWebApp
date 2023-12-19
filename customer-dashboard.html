@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=YourGoogleFont">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Customer Dashboard - The Outer Clove Restaurant</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/images/logo.jpg" alt="Restaurant Logo">
+            </div>
+            <h1>The Outer Clove Restaurant</h1>
+            <ul>
+                <li><a href="customer-dashboard.html">Home</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="account-management.html">Account Management</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="customer-dashboard-main">
+        <!-- Main section content goes here -->
+
+        <!-- Display welcome message with customer's name -->
+        <h2 id="welcomeMessage">Welcome, [Customer Name]</h2>
+
+    </section>
+
+    <section class="promotions">
+        <h2>Featured Promotions</h2>
+        <div class="promotion-card-container" id="promotionsContainer">
+            <!-- Promotions will be displayed here dynamically -->
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="contact-content">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to make a reservation? Reach out to us:</p>
+            <p>Email: info@outerclove.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <address>
+                Visit us at: 123 Main Street, Cityville, State, ZIP
+            </address>
+        </div>
+        <div class="map-container">
+            <!-- Google Maps Embedded Link (Replace with your actual link) -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2591.652075422456!2d-117.29785302373405!3d49.49107885597503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537cb6a67b4952a1%3A0xe9628c94e2a00cb3!2sOuter%20Clove%20Restaurant!5e0!3m2!1sen!2slk!4v1702715232683!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Retrieve user information from session storage
+            const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+
+            // Use loggedInUser.username as the customer's name
+            if (loggedInUser) {
+                document.getElementById('welcomeMessage').textContent = `Welcome, ${loggedInUser.username}!`;
+            } else {
+                // Handle the case when user information is not available
+            }
+
+            // Fetch promotions from JSON file
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Display promotions
+                    displayPromotions(data.promotions);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+
+        });
+    </script>
+</body>
+
+</html>

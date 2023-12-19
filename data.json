@@ -1,0 +1,35 @@
+{
+    "promotions": [
+        {
+            "id": 1,
+            "image": "promotion1.jpg",
+            "title": "Special Dinner Package",
+            "description": "Enjoy a three-course dinner with a complimentary dessert. Book your table now!"
+        },
+        {
+            "id": 2,
+            "image": "promotion2.jpg",
+            "title": "Happy Hour Cocktails",
+            "description": "Join us for happy hour and get 20% off on all cocktails. Cheers to good times!"
+        },
+        {
+            "id": 3,
+            "image": "promotion3.jpg",
+            "title": "Weekend Brunch Buffet",
+            "description": "Indulge in a lavish brunch buffet every weekend. Unlimited options and a delightful experience await you!"
+        },
+        {
+            "id": 4,
+            "image": "promotion4.jpg",
+            "title": "Wine Tasting Event",
+            "description": "Join us for an exclusive wine tasting event. Explore a curated selection of fine wines paired with exquisite bites."
+        },
+        {
+            "id": 5,
+            "image": "promotion5.jpg",
+            "title": "Chef's Special Menu",
+            "description": "Discover the Chef's special menu featuring seasonal ingredients and unique culinary creations."
+        }
+    ]
+    
+}

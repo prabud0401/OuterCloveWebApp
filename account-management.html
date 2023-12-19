@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=YourGoogleFont">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <title>Account Management - The Outer Clove Restaurant</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/images/logo.jpg" alt="Restaurant Logo">
+            </div>
+            <h1>The Outer Clove Restaurant</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="account-management.html">Account Management</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="account-management-main">
+        <!-- Display user data and provide options for CRUD operations -->
+        <h2>Account Management</h2>
+
+        <div id="userDataContainer">
+            <!-- User data will be dynamically added here -->
+        </div>
+
+        <button id="editButton">Edit Profile</button>
+        <button id="changePasswordButton">Change Password</button>
+    </section>
+
+    <footer id="contact">
+        <div class="contact-content">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to make a reservation? Reach out to us:</p>
+            <p>Email: info@outerclove.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <address>
+                Visit us at: 123 Main Street, Cityville, State, ZIP
+            </address>
+        </div>
+        <div class="map-container">
+            <!-- Google Maps Embedded Link (Replace with your actual link) -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2591.652075422456!2d-117.29785302373405!3d49.49107885597503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537cb6a67b4952a1%3A0xe9628c94e2a00cb3!2sOuter%20Clove%20Restaurant!5e0!3m2!1sen!2slk!4v1702715232683!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Retrieve user information from session storage
+            const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+
+            // Check if user is logged in
+            if (loggedInUser) {
+                // Display user information
+                displayUserData(loggedInUser);
+
+                // Add event listener for the Edit Profile button
+                document.getElementById('editButton').addEventListener('click', function () {
+                    // Redirect to the edit-profile.html page or implement edit functionality here
+                    window.location.href = 'edit-profile.html';
+                });
+
+                // Add event listener for the Change Password button
+                document.getElementById('changePasswordButton').addEventListener('click', function () {
+                    // Redirect to the change-password.html page or implement change password functionality here
+                    window.location.href = 'change-password.html';
+                });
+            } else {
+                // Handle the case when user information is not available
+                alert('User not logged in. Please log in to access account management.');
+                window.location.href = 'login.html'; // Redirect to the login page
+            }
+        });
+
+        // Function to display user information
+        function displayUserData(user) {
+            const userDataContainer = document.getElementById('userDataContainer');
+
+            // Create elements to display user information
+            const userId = document.createElement('p');
+            userId.textContent = `User ID: ${user.id}`;
+
+            const username = document.createElement('p');
+            username.textContent = `Username: ${user.username}`;
+
+            const fullName = document.createElement('p');
+            fullName.textContent = `Full Name: ${user.fullName}`;
+
+            const email = document.createElement('p');
+            email.textContent = `Email: ${user.email}`;
+
+            const phoneNumber = document.createElement('p');
+            phoneNumber.textContent = `Phone Number: ${user.phoneNumber}`;
+
+            const address = document.createElement('p');
+            address.textContent = `Address: ${user.address}`;
+
+            // Append elements to the container
+            userDataContainer.appendChild(userId);
+            userDataContainer.appendChild(username);
+            userDataContainer.appendChild(fullName);
+            userDataContainer.appendChild(email);
+            userDataContainer.appendChild(phoneNumber);
+            userDataContainer.appendChild(address);
+        }
+    </script>
+</body>
+
+</html>

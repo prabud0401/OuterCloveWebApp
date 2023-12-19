@@ -1,0 +1,49 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "admin",
+            "password": "admin123",
+            "role": "admin",
+            "fullName": "Admin User",
+            "email": "admin@example.com",
+            "phoneNumber": "+123456789",
+            "address": "Admin Street, City",
+            "isAdmin": true,
+            "staffDetails": null,
+            "customerDetails": null
+        },
+        {
+            "id": 2,
+            "username": "staff",
+            "password": "staff123",
+            "role": "staff",
+            "fullName": "Staff User",
+            "email": "staff@example.com",
+            "phoneNumber": "+987654321",
+            "address": "Staff Street, City",
+            "isAdmin": false,
+            "staffDetails": {
+                "position": "Waiter",
+                "shift": "Morning"
+            },
+            "customerDetails": null
+        },
+        {
+            "id": 3,
+            "username": "prabu",
+            "password": "customer123",
+            "role": "customer",
+            "fullName": "Customer User",
+            "email": "customer@example.com",
+            "phoneNumber": "+1122334455",
+            "address": "Customer Street, City",
+            "isAdmin": false,
+            "staffDetails": null,
+            "customerDetails": {
+                "loyaltyPoints": 100,
+                "membershipLevel": "Silver"
+            }
+        }
+    ]
+}
